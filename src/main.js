@@ -3,19 +3,19 @@ const portal = document.createElement("div");
 portal.id = "rtb-modal";
 document.getElementsByTagName("body")[0].appendChild(portal);
 
-import Vue from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import App from './App.vue';
+
+
 import store from "./store/";
 var VueScrollTo = require("vue-scrollto");
 import PortalVue from "portal-vue";
-import VueCarousel from "vue-carousel";
+// import VueCarousel from "vue-carousel";
 
-Vue.use(VueScrollTo);
-Vue.use(PortalVue);
-Vue.use(VueCarousel);
+const app = createApp(App);
 
-// You can also pass in the default options
-Vue.use(VueScrollTo, {
+// Use Plugins
+app.use(VueScrollTo, {
   container: "body",
   duration: 500,
   easing: "ease",
@@ -29,23 +29,13 @@ Vue.use(VueScrollTo, {
   y: true
 });
 
-Vue.config.productionTip = false;
-App.store = store;
+app.use(PortalVue);
+// app.use(VueCarousel);
 
-new Vue({
-  el: "#retainable-rss-embed",
-  store,
-  render(h) {
-    return h(App, {
-      props: {
-        rss: this.$el.dataset.rss,
-        maxcols: this.$el.dataset.maxcols,
-        layout: this.$el.dataset.layout,
-        poststyle: this.$el.dataset.poststyle,
-        buttonclass: this.$el.dataset.buttonclass,
-        readmore: this.$el.dataset.readmore,
-        offset: this.$el.dataset.offset
-      }
-    });
-  }
-});
+// Use store
+app.use(store);
+
+// Mount the app
+app.mount("#retainable-rss-embed");
+
+

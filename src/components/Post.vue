@@ -10,7 +10,7 @@
           <div class="mb-3">
             <div class="col-sm-12" v-for="(post, index) in posts" :key="`post-${index}`">
               <transition name="fade">
-                <div v-if="index == getCurrentPostIndex" v-html="getCurrentPost"></div>
+                <div v-if="index === getCurrentPostIndex" v-html="getCurrentPost"></div>
               </transition>
             </div>
           </div>
@@ -23,9 +23,9 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
+import dateFormat from "dateformat";
 import appPagination from "./Pagination";
-var dateFormat = require("dateformat");
-import { Portal, PortalTarget } from "portal-vue";
+import { Portal } from "portal-vue";
 
 export default {
   name: "appPost",
@@ -43,30 +43,55 @@ export default {
       "postStyle",
       "offset"
     ]),
-    ...mapGetters(["getCurrentPost", "getCurrentPostIndex"])
-  },
-  filters: {
-    formatPostDate: function(value) {
-      if (value) {
-        var newDate = new Date(value.replace(' ', 'T'));
-        return dateFormat(newDate, "dd mmm");
-      }
+    ...mapGetters(["getCurrentPost", "getCurrentPostIndex"]),
+    getCurrentPost() {
+      const postContent = this.$store.getters.getCurrentPost;
+      console.log("getCurrentPost computed property called, current post content:", postContent);
+      return postContent;
+    },
+    getCurrentPostIndex() {
+      const currentIndex = this.$store.getters.getCurrentPostIndex;
+      console.log("getCurrentPostIndex computed property called, current post index:", currentIndex);
+      return currentIndex;
     }
   },
   methods: {
     closePost() {
+      console.log("closePost method called. Dispatching 'closePost' action in Vuex.");
       this.$store.dispatch("closePost");
-      setTimeout(
-        () => this.$scrollTo("#rtb-anchor", 500, { offset: this.offset }),
-        1000
-      );
+      setTimeout(() => {
+        console.log("Scrolling to #rtb-anchor after closing post.");
+        this.$scrollTo("#rtb-anchor", 500, { offset: this.offset });
+      }, 1000);
+    },
+    formatPostDate(value) {
+      if (value) {
+        console.log("Formatting post date:", value);
+        const newDate = new Date(value.replace(' ', 'T'));
+        return dateFormat(newDate, "dd mmm");
+      }
+    }
+  },
+  mounted() {
+    console.log("appPost component mounted with the following props and data:");
+    console.log("posts:", this.posts);
+    console.log("postStyle:", this.postStyle);
+    console.log("currentPost:", this.getCurrentPost);
+    console.log("getCurrentPostIndex:", this.getCurrentPostIndex);
+  },
+  watch: {
+    getCurrentPost(newPost, oldPost) {
+      console.log("getCurrentPost watcher triggered. Old post:", oldPost, "New post:", newPost);
+    },
+    getCurrentPostIndex(newIndex, oldIndex) {
+      console.log("getCurrentPostIndex watcher triggered. Old index:", oldIndex, "New index:", newIndex);
     }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style lang="scss" scoped>
 #post-container {
   &.rtb-modal {
     position: fixed;
