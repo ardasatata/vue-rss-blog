@@ -7897,7 +7897,7 @@ function hydrateTeleport(node, vnode, parentComponent, parentSuspense, slotScope
   }
   return vnode.anchor && nextSibling(vnode.anchor);
 }
-const Teleport = (/* unused pure expression or super */ null && (TeleportImpl));
+const Teleport = TeleportImpl;
 function updateCssVars(vnode) {
   const ctx = vnode.ctx;
   if (ctx && ctx.ut) {
@@ -16275,16 +16275,16 @@ const initDirectivesForSSR = () => {
 
 
 
-;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=0ead0f78
+;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=template&id=1598a3a8
 
 const _hoisted_1 = {
   id: "rtb"
 };
-function Appvue_type_template_id_0ead0f78_render(_ctx, _cache, $props, $setup, $data, $options) {
+function Appvue_type_template_id_1598a3a8_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_app_grid = resolveComponent("app-grid");
   const _component_app_slider = resolveComponent("app-slider");
-  const _component_app_post = resolveComponent("app-post");
-  return openBlock(), createElementBlock("div", _hoisted_1, [_cache[4] || (_cache[4] = createBaseVNode("div", {
+  const _component_WatchCurrentPost = resolveComponent("WatchCurrentPost");
+  return openBlock(), createElementBlock("div", _hoisted_1, [_cache[3] || (_cache[3] = createBaseVNode("div", {
     id: "rtb-anchor"
   }, null, -1)), createVNode(TransitionGroup, {
     name: "fade"
@@ -16295,17 +16295,13 @@ function Appvue_type_template_id_0ead0f78_render(_ctx, _cache, $props, $setup, $
     }, null, 8, ["onMounted"])) : createCommentVNode("", true)).cacheIndex = 0, setBlockTracking(1), _cache[0]), _cache[1] || (setBlockTracking(-1), (_cache[1] = _ctx.layoutStyle == 'slider' && !_ctx.currentPost ? (openBlock(), createBlock(_component_app_slider, {
       key: 'slider',
       onMounted: $event => $options.logDebug('Slider component is visible')
-    }, null, 8, ["onMounted"])) : createCommentVNode("", true)).cacheIndex = 1, setBlockTracking(1), _cache[1]), _cache[2] || (setBlockTracking(-1), (_cache[2] = _ctx.postStyle === 'inline' && _ctx.currentPost ? (openBlock(), createBlock(_component_app_post, {
-      key: 'post',
-      onMounted: $event => $options.logDebug('Post component (inline) is visible')
-    }, null, 8, ["onMounted"])) : createCommentVNode("", true)).cacheIndex = 2, setBlockTracking(1), _cache[2])]),
+    }, null, 8, ["onMounted"])) : createCommentVNode("", true)).cacheIndex = 1, setBlockTracking(1), _cache[1])]),
     _: 1
-  }), _cache[3] || (setBlockTracking(-1), (_cache[3] = _ctx.postStyle === 'modal' ? (openBlock(), createBlock(_component_app_post, {
-    key: 0,
-    onMounted: $event => $options.logDebug('Post component (modal) is visible')
-  }, null, 8, ["onMounted"])) : createCommentVNode("", true)).cacheIndex = 3, setBlockTracking(1), _cache[3])]);
+  }), _cache[2] || (setBlockTracking(-1), (_cache[2] = createVNode(_component_WatchCurrentPost, {
+    onMounted: $event => $options.logDebug('WatchPost component (inline) is visible')
+  }, null, 8, ["onMounted"])).cacheIndex = 2, setBlockTracking(1), _cache[2])]);
 }
-;// ./src/App.vue?vue&type=template&id=0ead0f78
+;// ./src/App.vue?vue&type=template&id=1598a3a8
 
 ;// ./node_modules/@vue/devtools-api/lib/esm/env.js
 function getDevtoolsGlobalHook() {
@@ -18037,16 +18033,16 @@ var exportHelper = __webpack_require__(6262);
 const __exports__ = /*#__PURE__*/(0,exportHelper/* default */.A)(Gridvue_type_script_lang_js, [['render',Gridvue_type_template_id_c664d4dc_scoped_true_render],['__scopeId',"data-v-c664d4dc"]])
 
 /* harmony default export */ var Grid = (__exports__);
-;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Post.vue?vue&type=template&id=6513f168&scoped=true
+;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Post.vue?vue&type=template&id=135410df&scoped=true
 
-const Postvue_type_template_id_6513f168_scoped_true_hoisted_1 = {
+const Postvue_type_template_id_135410df_scoped_true_hoisted_1 = {
   class: "container"
 };
-const Postvue_type_template_id_6513f168_scoped_true_hoisted_2 = {
+const Postvue_type_template_id_135410df_scoped_true_hoisted_2 = {
   class: "mb-3"
 };
-const Postvue_type_template_id_6513f168_scoped_true_hoisted_3 = ["innerHTML"];
-function Postvue_type_template_id_6513f168_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+const Postvue_type_template_id_135410df_scoped_true_hoisted_3 = ["innerHTML"];
+function Postvue_type_template_id_135410df_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_app_pagination = resolveComponent("app-pagination");
   const _component_portal = resolveComponent("portal");
   return openBlock(), createBlock(_component_portal, {
@@ -18067,7 +18063,7 @@ function Postvue_type_template_id_6513f168_scoped_true_render(_ctx, _cache, $pro
       }, null, -1)), createBaseVNode("div", {
         class: "rtb-close",
         onClick: _cache[0] || (_cache[0] = (...args) => $options.closePost && $options.closePost(...args))
-      }, _cache[1] || (_cache[1] = [createBaseVNode("span", null, "X", -1)])), createBaseVNode("div", Postvue_type_template_id_6513f168_scoped_true_hoisted_1, [createBaseVNode("div", Postvue_type_template_id_6513f168_scoped_true_hoisted_2, [(openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(_ctx.posts, (post, index) => {
+      }, _cache[1] || (_cache[1] = [createBaseVNode("span", null, "X", -1)])), createBaseVNode("div", Postvue_type_template_id_135410df_scoped_true_hoisted_1, [createBaseVNode("div", Postvue_type_template_id_135410df_scoped_true_hoisted_2, [(openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(_ctx.posts, (post, index) => {
         return openBlock(), createElementBlock("div", {
           class: "col-sm-12",
           key: `post-${index}`
@@ -18077,7 +18073,7 @@ function Postvue_type_template_id_6513f168_scoped_true_render(_ctx, _cache, $pro
           default: withCtx(() => [index === $options.getCurrentPostIndex ? (openBlock(), createElementBlock("div", {
             key: 0,
             innerHTML: $options.getCurrentPost
-          }, null, 8, Postvue_type_template_id_6513f168_scoped_true_hoisted_3)) : createCommentVNode("", true)]),
+          }, null, 8, Postvue_type_template_id_135410df_scoped_true_hoisted_3)) : createCommentVNode("", true)]),
           _: 2
         }, 1024)]);
       }), 128))])]), createVNode(_component_app_pagination)], 2)) : createCommentVNode("", true)]),
@@ -18086,7 +18082,7 @@ function Postvue_type_template_id_6513f168_scoped_true_render(_ctx, _cache, $pro
     _: 1
   }, 8, ["disabled"]);
 }
-;// ./src/components/Post.vue?vue&type=template&id=6513f168&scoped=true
+;// ./src/components/Post.vue?vue&type=template&id=135410df&scoped=true
 
 ;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Pagination.vue?vue&type=template&id=fe9d869e&scoped=true
 
@@ -18418,7 +18414,7 @@ const q = (/* unused pure expression or super */ null && (C)), z = "3.0.0";
     Portal: W
   },
   computed: {
-    ...mapState(["posts", "maxCols", "layout", "postRows", "colClass", "postStyle", "offset"]),
+    ...mapState(["currentPost", "posts", "maxCols", "layout", "postRows", "colClass", "postStyle", "offset"]),
     ...mapGetters(["getCurrentPost", "getCurrentPostIndex"]),
     getCurrentPost() {
       const postContent = this.$store.getters.getCurrentPost;
@@ -18458,6 +18454,9 @@ const q = (/* unused pure expression or super */ null && (C)), z = "3.0.0";
     console.log("getCurrentPostIndex:", this.getCurrentPostIndex);
   },
   watch: {
+    currentPost(newVal, oldVal) {
+      console.log('ABC currentPost changed:', newVal);
+    },
     getCurrentPost(newPost, oldPost) {
       console.log("getCurrentPost watcher triggered. Old post:", oldPost, "New post:", newPost);
     },
@@ -18468,10 +18467,10 @@ const q = (/* unused pure expression or super */ null && (C)), z = "3.0.0";
 });
 ;// ./src/components/Post.vue?vue&type=script&lang=js
  
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Post.vue?vue&type=style&index=0&id=6513f168&lang=scss&scoped=true
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Post.vue?vue&type=style&index=0&id=135410df&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// ./src/components/Post.vue?vue&type=style&index=0&id=6513f168&lang=scss&scoped=true
+;// ./src/components/Post.vue?vue&type=style&index=0&id=135410df&lang=scss&scoped=true
 
 ;// ./src/components/Post.vue
 
@@ -18481,9 +18480,9 @@ const q = (/* unused pure expression or super */ null && (C)), z = "3.0.0";
 ;
 
 
-const Post_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Postvue_type_script_lang_js, [['render',Postvue_type_template_id_6513f168_scoped_true_render],['__scopeId',"data-v-6513f168"]])
+const Post_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Postvue_type_script_lang_js, [['render',Postvue_type_template_id_135410df_scoped_true_render],['__scopeId',"data-v-135410df"]])
 
-/* harmony default export */ var Post = (Post_exports_);
+/* harmony default export */ var Post = ((/* unused pure expression or super */ null && (Post_exports_)));
 ;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Slider.vue?vue&type=template&id=2dff803f&scoped=true
 
 const Slidervue_type_template_id_2dff803f_scoped_true_hoisted_1 = {
@@ -19401,121 +19400,51 @@ var Slide = runtime_core_esm_bundler_defineComponent({
 const Slider_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Slidervue_type_script_lang_js, [['render',Slidervue_type_template_id_2dff803f_scoped_true_render],['__scopeId',"data-v-2dff803f"]])
 
 /* harmony default export */ var Slider = (Slider_exports_);
-;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=js
+;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/WatchCurrentPost.vue?vue&type=template&id=a8f2f5ea&scoped=true
 
+const WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_hoisted_1 = {
+  class: "container"
+};
+const WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_hoisted_2 = {
+  class: "mb-3"
+};
+const WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_hoisted_3 = ["innerHTML"];
+function WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_app_pagination = resolveComponent("app-pagination");
+  return openBlock(), createBlock(Teleport, {
+    to: "#rtb-modal"
+  }, [createVNode(Transition, {
+    name: "fade"
+  }, {
+    default: withCtx(() => [$options.getCurrentPost ? (openBlock(), createElementBlock("div", {
+      key: 0,
+      id: "post-container",
+      class: shared_esm_bundler_normalizeClass(`rtb-${_ctx.postStyle}`)
+    }, [_cache[2] || (_cache[2] = createBaseVNode("div", {
+      id: "postTop"
+    }, null, -1)), createBaseVNode("div", {
+      class: "rtb-close",
+      onClick: _cache[0] || (_cache[0] = (...args) => $options.closePost && $options.closePost(...args))
+    }, _cache[1] || (_cache[1] = [createBaseVNode("span", null, "X", -1)])), createBaseVNode("div", WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_hoisted_1, [createBaseVNode("div", WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_hoisted_2, [(openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(_ctx.posts, (post, index) => {
+      return openBlock(), createElementBlock("div", {
+        class: "col-sm-12",
+        key: `post-${index}`
+      }, [createVNode(Transition, {
+        name: "fade"
+      }, {
+        default: withCtx(() => [index === $options.getCurrentPostIndex ? (openBlock(), createElementBlock("div", {
+          key: 0,
+          innerHTML: $options.getCurrentPost,
+          class: "post-content"
+        }, null, 8, WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_hoisted_3)) : createCommentVNode("", true)]),
+        _: 2
+      }, 1024)]);
+    }), 128))])]), createVNode(_component_app_pagination)], 2)) : createCommentVNode("", true)]),
+    _: 1
+  })]);
+}
+;// ./src/components/WatchCurrentPost.vue?vue&type=template&id=a8f2f5ea&scoped=true
 
-
-
-
-/* harmony default export */ var Appvue_type_script_lang_js = ({
-  // data() {
-  //   return {
-  //     rss: null, // Initialize with null or empty value
-  //     maxcols: null,
-  //     layout: null,
-  //     poststyle: null,
-  //     buttonclass: null,
-  //     readmore: null,
-  //     offset: null,
-  //   };
-  // },
-  props: ['rss', 'maxcols', 'layout', 'poststyle', 'buttonclass', 'readmore', 'offset'],
-  components: {
-    appGrid: Grid,
-    appPost: Post,
-    appSlider: Slider
-  },
-  created() {
-    // Access the data-rss attribute from the #app element
-    const appElement = document.getElementById('retainable-rss-embed');
-    // Access all data-* attributes from the #app element
-    if (appElement) {
-      const dataAttributes = appElement.dataset;
-      console.log('All data attributes:', dataAttributes);
-
-      // Debug messages to track Vuex commits and dispatched actions
-      console.log('Created lifecycle hook triggered');
-      console.log('Prop values received:', {
-        rss: dataAttributes.rss,
-        maxcols: dataAttributes.maxcols,
-        layout: dataAttributes.layout,
-        poststyle: dataAttributes.poststyle,
-        buttonclass: dataAttributes.buttonclass,
-        readmore: dataAttributes.readmore,
-        offset: dataAttributes.offset
-      });
-      // Kick off the store
-      this.$store.commit('setRss', dataAttributes.rss);
-      console.log('Committed RSS to store:', dataAttributes.rss);
-      this.$store.commit('setMaxCols', dataAttributes.maxcols);
-      console.log('Committed maxCols to store:', dataAttributes.maxcols);
-      this.$store.commit('setLayout', dataAttributes.layout);
-      console.log('Committed layout to store:', dataAttributes.layout);
-      this.$store.commit('setPostStyle', dataAttributes.poststyle);
-      console.log('Committed postStyle to store:', dataAttributes.poststyle);
-      this.$store.dispatch('getPosts', dataAttributes.rss);
-      console.log('Dispatched action getPosts with RSS:', dataAttributes.rss);
-      this.$store.commit('setButtonClass', dataAttributes.buttonclass);
-      console.log('Committed buttonClass to store:', dataAttributes.buttonclass);
-      this.$store.commit('setReadMore', dataAttributes.readmore);
-      console.log('Committed readMore text to store:', dataAttributes.readmore);
-      this.$store.commit('setOffset', dataAttributes.offset);
-      console.log('Committed offset to store:', dataAttributes.offset);
-    }
-  },
-  computed: {
-    ...mapState(['posts', 'maxCols', 'layoutStyle', 'postRows', 'colClass', 'currentPost', 'postStyle']),
-    ...mapGetters(['getCurrentPost'])
-  },
-  methods: {
-    logDebug(message) {
-      console.log(message);
-    }
-  }
-});
-;// ./src/App.vue?vue&type=script&lang=js
- 
-;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=style&index=0&id=0ead0f78&lang=scss
-// extracted by mini-css-extract-plugin
-
-;// ./src/App.vue?vue&type=style&index=0&id=0ead0f78&lang=scss
-
-;// ./src/App.vue
-
-
-
-
-;
-
-
-const App_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_script_lang_js, [['render',Appvue_type_template_id_0ead0f78_render]])
-
-/* harmony default export */ var App = (App_exports_);
-;// ./src/store/state.js
-/* harmony default export */ var state = ({
-  // Holds the array of posts fetched from RSS feeds
-  posts: [],
-  // URL of the RSS feed
-  rssUrl: "",
-  // Maximum number of columns in the grid layout
-  maxCols: 2,
-  // CSS class for the grid column layout
-  colClass: "col-sm-6",
-  // Layout style for displaying posts (either "grid" or "slider")
-  layoutStyle: "grid",
-  // Holds the rows of posts for display in a grid
-  postRows: [],
-  // The currently selected post (if any)
-  currentPost: null,
-  // Style for how the post is displayed (e.g., "modal", "inline", "external")
-  postStyle: "modal",
-  // CSS class for the button used in the UI
-  buttonClass: "",
-  // Text for the "Read More" link
-  readMore: "Read more",
-  // Offset value used for pagination or scrolling
-  offset: 0
-});
 ;// ./src/store/getters.js
 
 
@@ -19572,6 +19501,199 @@ function getCurrentPostIndex(state) {
   }
   return null;
 }
+;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/WatchCurrentPost.vue?vue&type=script&lang=js
+
+
+// import { Portal } from 'portal-vue';
+
+
+/* harmony default export */ var WatchCurrentPostvue_type_script_lang_js = ({
+  name: 'WatchCurrentPost',
+  components: {
+    appPagination: Pagination
+    // eslint-disable-next-line
+    // Portal
+  },
+  computed: {
+    ...mapState(['currentPost', "posts", "maxCols", "layout", "postRows", "colClass", "postStyle", "offset"]),
+    ...mapGetters(["getCurrentPost", "getCurrentPostIndex"]),
+    getCurrentPost() {
+      const postContent = this.$store.getters.getCurrentPost;
+      console.log("getCurrentPost computed property called, current post content:", postContent);
+      return postContent;
+    },
+    getCurrentPostIndex() {
+      const currentIndex = this.$store.getters.getCurrentPostIndex;
+      console.log("getCurrentPostIndex computed property called, current post index:", currentIndex);
+      return currentIndex;
+    }
+  },
+  methods: {
+    closePost() {
+      console.log("closePost method called. Dispatching 'closePost' action in Vuex.");
+      this.$store.dispatch("closePost");
+      setTimeout(() => {
+        console.log("Scrolling to #rtb-anchor after closing post.");
+        this.$scrollTo("#rtb-anchor", 500, {
+          offset: this.offset
+        });
+      }, 1000);
+    },
+    formatPostDate(value) {
+      if (value) {
+        console.log("Formatting post date:", value);
+        const newDate = new Date(value.replace(' ', 'T'));
+        return dateformat_default()(newDate, "dd mmm");
+      }
+    }
+  },
+  watch: {
+    currentPost(newVal, oldVal) {
+      console.log('currentPost changed:', newVal);
+    },
+    getCurrentPost(newPost, oldPost) {
+      console.log("getCurrentPost watcher triggered. Old post:", oldPost, "New post:", newPost);
+    },
+    getCurrentPostIndex(newIndex, oldIndex) {
+      console.log("getCurrentPostIndex watcher triggered. Old index:", oldIndex, "New index:", newIndex);
+    }
+  }
+});
+;// ./src/components/WatchCurrentPost.vue?vue&type=script&lang=js
+ 
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/WatchCurrentPost.vue?vue&type=style&index=0&id=a8f2f5ea&lang=scss&scoped=true
+// extracted by mini-css-extract-plugin
+
+;// ./src/components/WatchCurrentPost.vue?vue&type=style&index=0&id=a8f2f5ea&lang=scss&scoped=true
+
+;// ./src/components/WatchCurrentPost.vue
+
+
+
+
+;
+
+
+const WatchCurrentPost_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(WatchCurrentPostvue_type_script_lang_js, [['render',WatchCurrentPostvue_type_template_id_a8f2f5ea_scoped_true_render],['__scopeId',"data-v-a8f2f5ea"]])
+
+/* harmony default export */ var WatchCurrentPost = (WatchCurrentPost_exports_);
+;// ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=script&lang=js
+
+
+
+
+
+
+/* harmony default export */ var Appvue_type_script_lang_js = ({
+  // data() {
+  //   return {
+  //     rss: null, // Initialize with null or empty value
+  //     maxcols: null,
+  //     layout: null,
+  //     poststyle: null,
+  //     buttonclass: null,
+  //     readmore: null,
+  //     offset: null,
+  //   };
+  // },
+  props: ['rss', 'maxcols', 'layout', 'poststyle', 'buttonclass', 'readmore', 'offset'],
+  components: {
+    appGrid: Grid,
+    // appPost,
+    appSlider: Slider,
+    WatchCurrentPost: WatchCurrentPost
+  },
+  created() {
+    // Access the data-rss attribute from the #app element
+    const appElement = document.getElementById('retainable-rss-embed');
+    // Access all data-* attributes from the #app element
+    if (appElement) {
+      const dataAttributes = appElement.dataset;
+      console.log('All data attributes:', dataAttributes);
+
+      // Debug messages to track Vuex commits and dispatched actions
+      console.log('Created lifecycle hook triggered');
+      console.log('Prop values received:', {
+        rss: dataAttributes.rss,
+        maxcols: dataAttributes.maxcols,
+        layout: dataAttributes.layout,
+        poststyle: dataAttributes.poststyle,
+        buttonclass: dataAttributes.buttonclass,
+        readmore: dataAttributes.readmore,
+        offset: dataAttributes.offset
+      });
+      // Kick off the store
+      this.$store.commit('setRss', dataAttributes.rss);
+      console.log('Committed RSS to store:', dataAttributes.rss);
+      this.$store.commit('setMaxCols', dataAttributes.maxcols);
+      console.log('Committed maxCols to store:', dataAttributes.maxcols);
+      this.$store.commit('setLayout', dataAttributes.layout);
+      console.log('Committed layout to store:', dataAttributes.layout);
+      this.$store.commit('setPostStyle', dataAttributes.poststyle);
+      console.log('Committed postStyle to store:', dataAttributes.poststyle);
+      this.$store.dispatch('getPosts', dataAttributes.rss);
+      console.log('Dispatched action getPosts with RSS:', dataAttributes.rss);
+      this.$store.commit('setButtonClass', dataAttributes.buttonclass);
+      console.log('Committed buttonClass to store:', dataAttributes.buttonclass);
+      this.$store.commit('setReadMore', dataAttributes.readmore);
+      console.log('Committed readMore text to store:', dataAttributes.readmore);
+      this.$store.commit('setOffset', dataAttributes.offset);
+      console.log('Committed offset to store:', dataAttributes.offset);
+    }
+  },
+  computed: {
+    ...mapState(['posts', 'maxCols', 'layoutStyle', 'postRows', 'colClass', 'currentPost', 'postStyle']),
+    ...mapGetters(['getCurrentPost'])
+  },
+  methods: {
+    logDebug(message) {
+      console.log(message);
+    }
+  }
+});
+;// ./src/App.vue?vue&type=script&lang=js
+ 
+;// ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-22.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-22.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-22.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-22.use[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=style&index=0&id=1598a3a8&lang=scss
+// extracted by mini-css-extract-plugin
+
+;// ./src/App.vue?vue&type=style&index=0&id=1598a3a8&lang=scss
+
+;// ./src/App.vue
+
+
+
+
+;
+
+
+const App_exports_ = /*#__PURE__*/(0,exportHelper/* default */.A)(Appvue_type_script_lang_js, [['render',Appvue_type_template_id_1598a3a8_render]])
+
+/* harmony default export */ var App = (App_exports_);
+;// ./src/store/state.js
+/* harmony default export */ var state = ({
+  // Holds the array of posts fetched from RSS feeds
+  posts: [],
+  // URL of the RSS feed
+  rssUrl: "",
+  // Maximum number of columns in the grid layout
+  maxCols: 2,
+  // CSS class for the grid column layout
+  colClass: "col-sm-6",
+  // Layout style for displaying posts (either "grid" or "slider")
+  layoutStyle: "grid",
+  // Holds the rows of posts for display in a grid
+  postRows: [],
+  // The currently selected post (if any)
+  currentPost: null,
+  // Style for how the post is displayed (e.g., "modal", "inline", "external")
+  postStyle: "modal",
+  // CSS class for the button used in the UI
+  buttonClass: "",
+  // Text for the "Read More" link
+  readMore: "Read more",
+  // Offset value used for pagination or scrolling
+  offset: 0
+});
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.push.js
 var es_array_push = __webpack_require__(4114);
 ;// ./src/store/mutations.js
@@ -19764,6 +19886,7 @@ function closePost({
 /** Create portal target */
 const portal = document.createElement("div");
 portal.id = "rtb-modal";
+portal.name = "rtb-modal";
 document.getElementsByTagName("body")[0].appendChild(portal);
 
 

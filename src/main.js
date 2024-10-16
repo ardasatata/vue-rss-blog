@@ -1,6 +1,7 @@
 /** Create portal target */
 const portal = document.createElement("div");
 portal.id = "rtb-modal";
+portal.name = "rtb-modal";
 document.getElementsByTagName("body")[0].appendChild(portal);
 
 import { createApp } from 'vue';

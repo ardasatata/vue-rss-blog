@@ -1,5 +1,7 @@
+/* eslint-disable */
 <template>
-  <portal name="blog" to="destination" target-el="#rtb-modal" :disabled="postStyle === 'inline'">
+  <!-- <portal name="blog" to="destination" target-el="#rtb-modal" :disabled="postStyle === 'inline'"> -->
+    <Teleport to="#rtb-modal">
     <transition name="fade">
       <div id="post-container" v-if="getCurrentPost" :class="`rtb-${postStyle}`">
         <div id="postTop"></div>
@@ -10,7 +12,7 @@
           <div class="mb-3">
             <div class="col-sm-12" v-for="(post, index) in posts" :key="`post-${index}`">
               <transition name="fade">
-                <div v-if="index === getCurrentPostIndex" v-html="getCurrentPost"></div>
+                <div v-if="index === getCurrentPostIndex" v-html="getCurrentPost" class="post-content"></div>
               </transition>
             </div>
           </div>
@@ -18,31 +20,37 @@
         <app-pagination></app-pagination>
       </div>
     </transition>
-  </portal>
+  </Teleport>
+  <!-- </portal>  -->
+  <!-- <teleport name="blog" to="body">
+  <div v-html="getCurrentPost"></div>
+  </teleport> -->
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex';
 import dateFormat from "dateformat";
+// import { Portal } from 'portal-vue';
 import appPagination from "./Pagination";
-import { Portal } from "portal-vue";
+import { getCurrentPost } from '../store/getters';
 
 export default {
-  name: "appPost",
+  name: 'WatchCurrentPost',
   components: {
-    appPagination,
-    Portal
+    appPagination
+    // eslint-disable-next-line
+    // Portal
   },
   computed: {
     ...mapState([
-      "currentPost",
+      'currentPost',
       "posts",
       "maxCols",
       "layout",
       "postRows",
       "colClass",
       "postStyle",
-      "offset"
+      "offset"      
     ]),
     ...mapGetters(["getCurrentPost", "getCurrentPostIndex"]),
     getCurrentPost() {
@@ -54,7 +62,7 @@ export default {
       const currentIndex = this.$store.getters.getCurrentPostIndex;
       console.log("getCurrentPostIndex computed property called, current post index:", currentIndex);
       return currentIndex;
-    }
+    }    
   },
   methods: {
     closePost() {
@@ -72,17 +80,10 @@ export default {
         return dateFormat(newDate, "dd mmm");
       }
     }
-  },
-  mounted() {
-    console.log("appPost component mounted with the following props and data:");
-    console.log("posts:", this.posts);
-    console.log("postStyle:", this.postStyle);
-    console.log("currentPost:", this.getCurrentPost);
-    console.log("getCurrentPostIndex:", this.getCurrentPostIndex);
-  },
+  },  
   watch: {
     currentPost(newVal, oldVal) {
-      console.log('ABC currentPost changed:', newVal);
+      console.log('currentPost changed:', newVal);
     },
     getCurrentPost(newPost, oldPost) {
       console.log("getCurrentPost watcher triggered. Old post:", oldPost, "New post:", newPost);
@@ -94,9 +95,9 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 #post-container {
+
   &.rtb-modal {
     position: fixed;
     top: 0;
@@ -161,6 +162,7 @@ export default {
         font-size: 21px;
         line-height: 33px;
       }
+
     }
   }
   &.rtb-inline {
@@ -169,9 +171,18 @@ export default {
       display: none;
     }
   }
-  img {
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.post-content img {
     max-width: 100%;
-    height: auto;
-  }
+    height:auto;
 }
 </style>

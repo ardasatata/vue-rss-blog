@@ -17,19 +17,23 @@
         v-on:mounted="logDebug('Slider component is visible')"
       ></app-slider>
 
-      <app-post
+      <!-- <appPost
         v-if="postStyle === 'inline' && currentPost"
         :key="'post'"
         v-once
         v-on:mounted="logDebug('Post component (inline) is visible')"
-      ></app-post>
+      ></appPost> -->
     </transition-group>
     
-    <app-post
-      v-if="postStyle === 'modal'"
+    <!-- <app-post
+      v-if="postStyle === 'modale'"
       v-once
       v-on:mounted="logDebug('Post component (modal) is visible')"
-    ></app-post>
+    ></app-post> -->
+    <WatchCurrentPost v-once v-on:mounted="logDebug('WatchPost component (inline) is visible')">
+    </WatchCurrentPost>
+    <!-- <WatchCurrentPost v-if="poststyle === 'modal'" v-once v-on:mounted="logDebug('WatchPost component (modal) is visible')">
+    </WatchCurrentPost> -->
   </div>
 </template>
 
@@ -39,6 +43,8 @@ import { useTemplateRef, onMounted, ref } from 'vue';
 import appGrid from './components/Grid';
 import appPost from './components/Post';
 import appSlider from './components/Slider';
+import WatchCurrentPost from './components/WatchCurrentPost';
+
 
 
 
@@ -67,8 +73,9 @@ export default {
   ],
   components: {
     appGrid,
-    appPost,
-    appSlider
+    // appPost,
+    appSlider,
+    WatchCurrentPost
   },
   created() {
 // Access the data-rss attribute from the #app element
