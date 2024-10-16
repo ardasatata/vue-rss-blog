@@ -5,6 +5,6 @@ if (container) {
     css.rel = "stylesheet"
     document.getElementsByTagName('head')[0].appendChild(css);
     var script = document.createElement('script');
-    script.src = "https://raw.githubusercontent.com/vbalko-claimate/vue-rss-blog/refs/heads/newvue/dist/retainable.js";
+    script.src = "https://www.twilik.com/assets/retainable/rss-embed/retainable.js";
     document.getElementsByTagName('body')[0].appendChild(script);
 }
