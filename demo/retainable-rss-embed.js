@@ -1,4 +1,4 @@
-var container = document.getElementById("retainable-rss-embed");
+var container = document.getElementById("retainable-rss-embed3");
 if (container) {
     var css = document.createElement('link');
     css.href = "https://raw.githubusercontent.com/vbalko-claimate/vue-rss-blog/refs/heads/newvue/dist/retainable.css";
