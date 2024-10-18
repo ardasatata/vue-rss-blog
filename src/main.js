@@ -37,6 +37,6 @@ app.use(PortalVue);
 app.use(store);
 
 // Mount the app
-app.mount("#retainable-rss-embed");
+app.mount("#retainable-rss-embed3");
 
 

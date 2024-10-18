@@ -79,7 +79,7 @@ export default {
   },
   created() {
 // Access the data-rss attribute from the #app element
-    const appElement = document.getElementById('retainable-rss-embed');
+    const appElement = document.getElementById('retainable-rss-embed3');
     // Access all data-* attributes from the #app element
     if (appElement) {
       const dataAttributes = appElement.dataset;
